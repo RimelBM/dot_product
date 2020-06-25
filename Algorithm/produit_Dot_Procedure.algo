@@ -1,0 +1,63 @@
+PROCEDURE dot_product(n :INTEGER, V1:ARRAY_OF INTEGER, V2:ARRAY_OF INTEGER, VAR ps:INTEGER)
+VAR
+    i: INTEGER := 0;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        ps := ps + (V1[i] * v2[i])
+    END_FOR
+END
+
+
+ALGORITHM Vectors
+VAR
+    n : INTEGER ; //size of victor
+    i,j : INTEGER ;
+    V : ARRAY_OF INTEGER; //array for presenting the vector
+    x : INTEGER := 0 ; // Number pair of Vectors
+    ps: INTEGER;
+BEGIN
+    
+    //read size of vectors
+    REPEAT
+        Read(n);
+    UNTIL (n<=0)
+
+    //read n pairs vectors
+    REPEAT
+
+        Read(x);
+
+    UNTIL (x%2 <> 0)
+
+    // remplir les vectors 
+
+    FOR i FROM 0 TO x-1 STEP 1 DO
+        
+        FOR j FROM 0 TO n-1 STEP 1  DO
+        Read(Vi[j]) ; // Vi càd V1,V2,V3 ... Vx
+        END_FOR
+
+    END_FOR
+
+    //pour n paires de vectors,tester si deux vecteurs sont orthogonaux
+    
+    FOR i FROM 0 TO x-2 STEP 1  DO
+        
+        FOR j FROM 1 TO x-1 STEP 1 DO
+            
+            ps :=0;
+            //appel procedure avec  size de vector et les 2 vectors et ps
+            dot_product(n,Vi,Vj,ps)
+
+            // tester si orthogonal
+            IF (ps = 0) THEN
+                Write(Vi , Vj , "are orthogonal")
+            END_IF
+
+
+        END_FOR
+        
+    END_FOR
+
+
+END
